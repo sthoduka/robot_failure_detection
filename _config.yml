@@ -1,0 +1,8 @@
+theme: null
+markdown: kramdown
+kramdown:
+  input: GFM
+collections:
+  videos:
+    output: true
+baseurl: "/robot_failure_detection"

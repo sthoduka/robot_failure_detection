@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ page.title }}</title>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; display: flex; }
+  .sidebar {
+    width: 260px; height: 100vh; position: fixed; background: #111;
+    color: white; overflow-y: auto; padding: 20px;
+  }
+  .sidebar a { color: #4ea3ff; text-decoration: none; display: block; margin-bottom: 8px; }
+  .sidebar a:hover { text-decoration: underline; }
+  .content { margin-left: 280px; padding: 25px; max-width: 1200px; }
+  iframe { width: 1120; height: 650px; border: none; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>Videos</h2>
+  {% for video in site.data.videos %}
+    <a href="{{ video.page | relative_url }}">{{ video.title }}</a>
+  {% endfor %}
+</div>
+
+<div class="content">
+  {{ content }}
+</div>
+
+</body>
+</html>
+
